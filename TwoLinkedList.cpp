@@ -63,6 +63,9 @@ std::string UTEC::TwoLinkedList::getlist(int valor) {
     std::string txt1;
     std::string txt2 = "";
     std::string txt3 = "";
+    Node* temp1 = head1;
+    Node* temp2 = head2;
+
     if (valor == 0){
         if (!is_merged()){
             return "";
@@ -73,13 +76,15 @@ std::string UTEC::TwoLinkedList::getlist(int valor) {
     }
     else if (valor == 1){
         for (int i = 0; i < size1() ; i++) {
-            txt1 += std::to_string(get_value1(i)) + " ";
+            txt1 += std::to_string(temp1->value) + " ";
+            temp1 = temp1 -> next;
         }
         return txt1;
     }
     else if (valor == 2){
         for (int i = 0; i < size2() ; i++) {
-            txt1 += std::to_string(get_value2(i)) + " ";
+            txt1 += std::to_string(temp2->value) + " ";
+            temp2 = temp2 -> next;
         }
         return txt1;
     }
